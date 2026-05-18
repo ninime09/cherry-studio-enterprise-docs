@@ -4,6 +4,7 @@ description: "Configure visibility of models, assistants, knowledge bases, and o
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout'
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
 
 <Callout type="info">
 **Navigation:** Group Management → Click the **Settings** button for the target group → Expand the **Resource Visibility** panel on the left.
@@ -70,7 +71,18 @@ Each tab supports both "All" and "Specified" modes. Follow the same steps descri
 
 In the group settings page, expand **Quota Management** on the left → Click the **Token Quota** tab to set token-based usage limits for this group.
 
-<img src="/assets/images/en/admin/group-management-token-quota_en.webp" alt="Token quota configuration" />
+<Tabs items={['Express', 'Premium']}>
+<Tab value="Express">
+
+<img src="/assets/images/en/admin/group-management-token-quota-express_en.webp" alt="Express Token Quota configuration" />
+
+</Tab>
+<Tab value="Premium">
+
+<img src="/assets/images/en/admin/group-management-token-quota_en.webp" alt="Premium Token Quota configuration" />
+
+</Tab>
+</Tabs>
 
 Token Quota is configured at three levels:
 
@@ -105,7 +117,7 @@ This feature is only available in the **Express** edition. In the group settings
 
 Cost Quota uses monetary amounts (rather than token counts) to control API spending for the group and its members.
 
-<img src="/assets/images/en/admin/group-management-cost-quota-1_en.webp" alt="Cost Quota Configuration (top)" />
+<img src="/assets/images/en/admin/group-management-cost-quota-1_en.webp" alt="Cost Quota configuration" />
 
 Like Token Quota, Cost Quota is configured at three levels:
 
@@ -121,11 +133,29 @@ Members without individual quota settings will inherit this default.
 
 The maximum quota a group admin can set for an individual member.
 
-<img src="/assets/images/en/admin/group-management-cost-quota-2_en.webp" alt="Cost Quota Configuration (bottom)" />
-
 <Callout type="warn">
 Token limits and cost limits are enforced simultaneously. When either limit is reached, the user's subsequent API calls will be blocked.
 </Callout>
+
+### Temporary Quota Adjustment
+
+<Callout type="info">
+**Availability:** Currently available in the Express cloud edition.
+</Callout>
+
+On the **Quota Management** → **Cost Quota** or **Token Quota** page, each period-based limit field (daily / weekly / monthly) has a **+** temporary adjustment button. Use it to inject temporary allowance into **Group Total Quota** or **Default Member Quota** for the current period without modifying the saved quota.
+
+<img src="/assets/images/en/admin/group-management-quota-adjust-popover_en.webp" alt="Group quota — temporary adjustment" />
+
+**How it works:**
+
+* Click the **+** button beside a limit field → enter the amount in the popover → click **Apply**.
+* The added amount expires when the period auto-resets and never modifies the saved limit value.
+* The **Total Limit** field does not support temporary adjustments (no auto-reset).
+
+**View history:** Click **Adjustment History** at the top right of the page to open the group's full adjustment history dialog across all periods.
+
+<img src="/assets/images/en/admin/group-management-quota-adjust-history_en.webp" alt="Group adjustment history" />
 
 ## Validate Permission Configuration
 

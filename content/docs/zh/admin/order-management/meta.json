@@ -1,5 +1,5 @@
 {
   "title": "订单管理",
   "icon": "ShoppingCart",
-  "pages": ["order-list", "order-details"]
+  "pages": ["order-list", "order-details", "using-discount-code"]
 }

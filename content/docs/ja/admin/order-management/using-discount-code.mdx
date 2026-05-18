@@ -1,0 +1,33 @@
+---
+title: "割引コードの使用"
+description: "Express プランの購入・更新時に注文概要ページで割引コードを入力します。"
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { DynamicLink } from 'fumadocs-core/dynamic-link'
+
+<Callout type="info">
+割引コードは **Express プランの購入・更新** 時のみ利用できます。残高（Token）チャージには適用されません。Premium 版はライセンスベースの認証のため、割引コードはありません。
+</Callout>
+
+## 入力場所
+
+注文時に表示される **注文概要** ページの右側に「**割引コード**」入力欄があります。
+
+注文概要ページへの到達方法は 2 つ：
+
+- **初回開通**：アカウント登録 → 組織作成 → プラン選択 → 企業認証完了で自動的に遷移します。詳細は <DynamicLink href="/[lang]/docs/quickstart#express">クイックスタート · Express 版</DynamicLink>。
+- **更新または組織追加**：**アカウントセンター** → **連携組織** → 「**組織作成**」をクリック、または期限切れ組織は更新エントリから。
+
+## 割引コードの適用
+
+<img src="/assets/images/ja/express/discount-checkout_ja.webp" alt="注文概要と割引コード入力欄" />
+
+「**割引コード**」欄にコードを入力し（大文字小文字は区別しません）、「**適用**」をクリックします。適用結果に応じて合計金額が更新されます。内容を確認したら注文を送信し、支払いに進みます。
+
+## 割引コードの入手
+
+割引コードは Cherry Studio チームが発行します：
+
+- ビジネスのお問い合わせは <DynamicLink href="/[lang]/docs/contact">お問い合わせ</DynamicLink> から。
+- マーケティングキャンペーン期間中は、公式チャネル（公式 WeChat、カスタマーサポート）で公開コードが告知されます。

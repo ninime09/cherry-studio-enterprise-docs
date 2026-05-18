@@ -38,7 +38,7 @@ Express supports switching between **Cost Quota** and **Token Quota** via the ta
 <table><thead><tr><th width="100">Dimension</th><th>Description</th></tr></thead><tbody><tr><td><strong>Daily</strong></td><td>Maximum usage allowed in the past 24 hours. Auto-resets daily.</td></tr><tr><td><strong>Weekly</strong></td><td>Maximum usage allowed in the past 7 days. Auto-resets weekly.</td></tr><tr><td><strong>Monthly</strong></td><td>Maximum usage allowed in the past 30 days. Auto-resets monthly.</td></tr><tr><td><strong>Total</strong></td><td>Cumulative total usage cap. Does not auto-reset; requires manual reset.</td></tr></tbody></table>
 
 <Callout type="info">
-**Tip:** Leave a field empty to inherit the group default. If the group has no limit either, the dimension is unrestricted.
+**Tip:** Leave a field empty to inherit the group default. If the group has no limit either, the dimension is unrestricted. Click **Restore Default** at the bottom-left of the dialog to clear all custom limits for this user in one step and revert to inheriting the group default.
 </Callout>
 
 ## Viewing Usage and Resetting
@@ -73,3 +73,42 @@ Click the expand button next to each quota dimension to view usage details:
 <Callout type="warn">
 **Note:** When a user reaches their quota, subsequent API calls will be rejected until the quota resets or an admin adjusts it.
 </Callout>
+
+## Temporary Quota Adjustment
+
+<Callout type="info">
+**Availability:** Currently available in the Express cloud edition. The added amount expires when the period resets and does not modify the original quota configuration.
+</Callout>
+
+When a user has an urgent need that exceeds their current quota (for example, the monthly limit is reached but a batch task still needs to run), you can use **Temporary Quota** to inject extra allowance into that user's current period without modifying their regular quota settings.
+
+### Adding Temporary Quota
+
+1. Go to **User Management** and click **Quota** in the target user's action column to open the user quota dialog.
+2. Switch to the **Cost Quota** or **Token Quota** tab.
+3. Next to the **Daily Limit / Weekly Limit / Monthly Limit** field (beside the chart button), click the **+** button.
+4. In the **Add temporary quota — Daily/Weekly/Monthly** popover, enter the amount to add (positive integer; the unit matches the active tab — tokens or currency), then click **Apply**.
+
+<img src="/assets/images/en/admin/user-management-quota-adjust-popover_en.webp" alt="User quota — temporary adjustment" />
+
+<Callout type="warn">
+The added amount applies only to the **current period**. It clears together with the period's usage at the next auto-reset and never changes the user's regular quota value. The **Total Limit** field does not support temporary adjustments.
+</Callout>
+
+### Viewing Adjustment History
+
+On the **User Management** page, click the **⋯** action menu next to the target user and choose **Adjustment History**.
+
+<img src="/assets/images/en/admin/user-management-quota-adjust-entry_en.webp" alt="Adjustment History entry" />
+
+The dialog lists the user's full adjustment history across all periods in reverse chronological order:
+
+| Column | Description |
+|---|---|
+| **Time** | Timestamp of the adjustment |
+| **Period** | Period the adjustment applies to (Daily / Weekly / Monthly) |
+| **Unit** | Unit of the adjustment (Cost / Token) |
+| **Amount** | Value added in this adjustment |
+| **Operator** | Admin account that performed the adjustment |
+
+<img src="/assets/images/en/admin/user-management-quota-adjust-history_en.webp" alt="User adjustment history" />
