@@ -10,6 +10,9 @@ import { Callout } from 'fumadocs-ui/components/callout'
 **入口路径：** 管理后台 → 关于我们 → 应用信息
 </Callout>
 
+<img src="/assets/images/zh/admin/about-us-application-info-express_zh.webp" alt="应用信息" />
+
+<PremiumOnly>
 <Tabs items={['Express 版', 'Premium 版']}>
 <Tab value="Express 版">
 
@@ -22,12 +25,17 @@ import { Callout } from 'fumadocs-ui/components/callout'
 
 </Tab>
 </Tabs>
+</PremiumOnly>
 
 ## 版本与状态监控
 
 页面顶部区域展示了当前部署实例的"健康状况"：
 
-<table><thead><tr><th width="104.90625">参数字段</th><th width="265.25390625">描述说明</th><th>关键用途</th></tr></thead><tbody><tr><td><strong>当前版本</strong></td><td>当前部署实例的版本号（如 <code>0.4.10</code>）。</td><td>用于确认功能兼容性及新特性支持情况。</td></tr><tr><td><strong>最新版本</strong></td><td>官方已发布的最新版本号（如 <code>0.4.10</code>）。</td><td>与当前版本对比，判断是否需要升级。</td></tr><tr><td><strong>构建版本</strong></td><td>精确到分钟的内部构建时间戳（如 <code>202603311021</code>）。</td><td><strong>排查故障的核心凭证</strong>。向官方反馈 Bug 时，请务必提供此 ID，以便定位具体代码分支。</td></tr><tr><td><strong>服务状态</strong></td><td>后端服务的实时连通性检测。</td><td>显示 ● 正常运行 代表系统健康；若显示红色，请立即检查服务器 Docker 容器日志。</td></tr><tr><td><strong>系统更新</strong> <em>(仅 Premium)</em></td><td>配置软件更新后，可检测并升级到最新版本。</td><td>需先点击"配置软件更新"完成配置；配置完成后可在线检测和安装更新。</td></tr></tbody></table>
+<table><thead><tr><th width="104.90625">参数字段</th><th width="265.25390625">描述说明</th><th>关键用途</th></tr></thead><tbody><tr><td><strong>当前版本</strong></td><td>当前部署实例的版本号（如 <code>0.4.10</code>）。</td><td>用于确认功能兼容性及新特性支持情况。</td></tr><tr><td><strong>最新版本</strong></td><td>官方已发布的最新版本号（如 <code>0.4.10</code>）。</td><td>与当前版本对比，判断是否需要升级。</td></tr><tr><td><strong>构建版本</strong></td><td>精确到分钟的内部构建时间戳（如 <code>202603311021</code>）。</td><td><strong>排查故障的核心凭证</strong>。向官方反馈 Bug 时，请务必提供此 ID，以便定位具体代码分支。</td></tr><tr><td><strong>服务状态</strong></td><td>后端服务的实时连通性检测。</td><td>显示 ● 正常运行 代表系统健康；若显示红色，请立即检查服务器 Docker 容器日志。</td></tr></tbody></table>
+
+<PremiumOnly>
+**系统更新**（仅 Premium 版）：配置软件更新后，可检测并升级到最新版本。需先点击"配置软件更新"完成配置；配置完成后可在线检测和安装更新。
+</PremiumOnly>
 
 <Callout type="warn">
 **注意：** 如果 **服务状态** 显示异常，虽然前端页面可能仍能访问，但模型调用、文件解析等核心后端功能将会失效。
@@ -39,6 +47,8 @@ import { Callout } from 'fumadocs-ui/components/callout'
 
 * **客户端下载：** 提供 Windows 和 macOS 版本的 Cherry Studio Enterprise 客户端下载链接。
 * **帮助文档：** 跳转至官方详细的操作手册（即您当前阅读的文档库）。
+
+<PremiumOnly>
 * **Docker 镜像** *(仅 Premium)*：跳转至 Docker Hub 官方仓库，用于服务器端的升级维护操作。
 
 <Callout type="info">
@@ -47,3 +57,4 @@ import { Callout } from 'fumadocs-ui/components/callout'
 docker-registry.cherry-ai.com/public/cherry-studio-enterprise-api:v0.4.10
 ```
 </Callout>
+</PremiumOnly>

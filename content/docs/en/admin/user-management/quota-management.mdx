@@ -18,6 +18,11 @@ Cherry Studio uses a two-level quota system:
 1. Go to the **User Management** page.
 2. Click the **Quota** button in the target user's action column.
 
+<img src="/assets/images/en/admin/user-management-quota-dialog-express_en.webp" alt="User Quota Settings" />
+
+Switch between **Cost Quota** and **Token Quota** via the tabs at the top of the dialog to set limits by cost or token consumption.
+
+<PremiumOnly>
 <Tabs items={['Express', 'Premium']}>
 <Tab value="Express">
 
@@ -32,6 +37,7 @@ Express supports switching between **Cost Quota** and **Token Quota** via the ta
 
 </Tab>
 </Tabs>
+</PremiumOnly>
 
 3. Set limit values for each dimension:
 
@@ -45,6 +51,14 @@ Express supports switching between **Cost Quota** and **Token Quota** via the ta
 
 Click the expand button next to each quota dimension to view usage details:
 
+<img src="/assets/images/en/admin/user-management-quota-detail-express_en.webp" alt="Quota Usage Details" />
+
+* **Current Usage**: Displayed as `used / limit` showing the current period's consumption against the cap.
+* **Last 24 Hours**: Amount consumed in the last 24 hours.
+* **Next Reset**: When the quota will auto-reset.
+* **Reset Usage** button: Manually reset the current period's usage to zero.
+
+<PremiumOnly>
 <Tabs items={['Express', 'Premium']}>
 <Tab value="Express">
 
@@ -67,6 +81,7 @@ Click the expand button next to each quota dimension to view usage details:
 
 </Tab>
 </Tabs>
+</PremiumOnly>
 
 4. Click **Save** when done.
 
@@ -77,7 +92,7 @@ Click the expand button next to each quota dimension to view usage details:
 ## Temporary Quota Adjustment
 
 <Callout type="info">
-**Availability:** Currently available in the Express cloud edition. The added amount expires when the period resets and does not modify the original quota configuration.
+The added amount expires when the period resets and does not modify the original quota configuration.
 </Callout>
 
 When a user has an urgent need that exceeds their current quota (for example, the monthly limit is reached but a batch task still needs to run), you can use **Temporary Quota** to inject extra allowance into that user's current period without modifying their regular quota settings.

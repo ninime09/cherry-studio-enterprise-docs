@@ -1,9 +1,11 @@
 ---
-title: "服务商管理（旗舰版/Premium）"
+title: "服务商管理（标准协议）"
 description: "通过标准协议（OpenAI、Anthropic、Google 等）接入主流模型服务商的配置流程。"
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout'
+
+<PremiumOnly>
 
 ## 概述
 
@@ -95,3 +97,5 @@ A: 部分兼容 OpenAI 协议的服务商不支持自动列出模型 (`/v1/model
 **Q: 为什么我的助手无法使用知识库？**&#x20;
 
 A: 请检查该助手使用的模型是否带有 🔧 (工具调用) 图标。部分轻量级模型或旧版模型不支持工具调用，无法触发知识库检索。
+
+</PremiumOnly>

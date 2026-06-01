@@ -3,33 +3,28 @@ title: 客户端
 description: "专为企业员工设计的 AI 工作助手，提供智能对话、知识检索、智能体、MCP 工具和小程序等一站式工作台入口。"
 ---
 
-import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
 import { Callout } from 'fumadocs-ui/components/callout'
 
 ## 下载与登录
 
-- **客户端下载**: https://enterprise.cherry-ai.com/
+- **客户端下载**: https://enterprise.cherryai.com.cn/download
 
-客户端支持两种登录方式，对应不同的部署版本。可通过登录页面右下角的切换按钮进行切换。
+<img src="/assets/images/zh/client-login-express_zh.webp" alt="客户端登录 — 云服务" />
 
-<Tabs items={['Express 版（云服务）', 'Premium 版（私有化部署）']}>
-<Tab value="Express 版（云服务）">
-
-<img src="/assets/images/zh/client-login-express_zh.webp" alt="Express 版登录 — 云服务" />
-
-Express 版使用云服务登录，支持以下两种方式：
+客户端使用云服务账号登录，支持以下两种方式：
 
 - **验证码登录**：输入手机号，获取并输入验证码即可登录。
 - **密码登录**：使用已注册的手机号和密码登录。
 
 如果还没有账号，可点击左下角「注册账号」进行注册。
 
-</Tab>
-<Tab value="Premium 版（私有化部署）">
+<PremiumOnly>
+
+### 私有化部署登录
 
 <img src="/assets/images/zh/client-login-premium_zh.webp" alt="Premium 版登录 — 私有化部署" />
 
-Premium 版使用私有化部署登录，需要填写以下信息：
+私有化部署版本使用以下信息登录：
 
 - **服务端地址**：企业自行部署的服务器 URL。
 - **用户名**：由管理员分配的用户名。
@@ -41,12 +36,9 @@ Premium 版使用私有化部署登录，需要填写以下信息：
 **体验账号：** 服务端地址 `https://api.demo.cherry-ai.com`，用户名 `user`，密码 `password`
 </Callout>
 
-</Tab>
-</Tabs>
-
-<Callout type="info">
 点击登录页面右下角的「私有化部署」或「云服务」可在两种登录方式之间切换。
-</Callout>
+
+</PremiumOnly>
 
 ## 核心功能
 

@@ -8,12 +8,12 @@ import { Callout } from 'fumadocs-ui/components/callout'
 
 ## ダッシュボード概要
 
-コア指標ダッシュボードは、主要な KPI をカード形式で表示します。Express 版では **Token** と **金額** の 2 つのビューを提供し、Premium 版では統一的なトークン使用量ビューを提供します。
+コア指標ダッシュボードは、主要な KPI をカード形式で表示します。**Token** と **金額** の 2 つのビューを切り替えて確認できます。
 
-<Tabs items={['Express 版 — Token', 'Express 版 — 金額', 'Premium 版']}>
-<Tab value="Express 版 — Token">
+<Tabs items={['Token', '金額']}>
+<Tab value="Token">
 
-<img src="/assets/images/ja/admin/usage-analytics-core-metrics-express-token_ja.webp" alt="Express 版 Token ダッシュボード" />
+<img src="/assets/images/ja/admin/usage-analytics-core-metrics-express-token_ja.webp" alt="Token ダッシュボード" />
 
 ### 指標の説明
 
@@ -29,9 +29,9 @@ import { Callout } from 'fumadocs-ui/components/callout'
 | **キャッシュ書き込み Token** | 後続の再利用のためにキャッシュに書き込まれたトークン数。 |
 
 </Tab>
-<Tab value="Express 版 — 金額">
+<Tab value="金額">
 
-<img src="/assets/images/ja/admin/usage-analytics-core-metrics-express-cost_ja.webp" alt="Express 版金額ダッシュボード" />
+<img src="/assets/images/ja/admin/usage-analytics-core-metrics-express-cost_ja.webp" alt="金額ダッシュボード" />
 
 ### 指標の説明
 
@@ -47,11 +47,15 @@ import { Callout } from 'fumadocs-ui/components/callout'
 | **アクティブモデル** | 呼び出されたモデル数。 |
 
 </Tab>
-<Tab value="Premium 版">
+</Tabs>
+
+<PremiumOnly>
+
+### Premium 版コア指標ダッシュボード
 
 <img src="/assets/images/ja/admin/usage-analytics-core-metrics_ja.webp" alt="Premium 版コア指標ダッシュボード" />
 
-### 指標の説明
+#### 指標の説明
 
 | 指標 | 説明 |
 | --- | --- |
@@ -68,7 +72,6 @@ import { Callout } from 'fumadocs-ui/components/callout'
 **運用ヒント:** **中断リクエスト** が増えたら **システム設定 > Model Provider** の接続状態や外部ネットワークを確認してください。
 </Callout>
 
-</Tab>
-</Tabs>
+</PremiumOnly>
 
 ***

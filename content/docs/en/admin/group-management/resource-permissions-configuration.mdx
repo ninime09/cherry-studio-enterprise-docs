@@ -71,6 +71,9 @@ Each tab supports both "All" and "Specified" modes. Follow the same steps descri
 
 In the group settings page, expand **Quota Management** on the left → Click the **Token Quota** tab to set token-based usage limits for this group.
 
+<img src="/assets/images/en/admin/group-management-token-quota-express_en.webp" alt="Token Quota configuration" />
+
+<PremiumOnly>
 <Tabs items={['Express', 'Premium']}>
 <Tab value="Express">
 
@@ -83,6 +86,7 @@ In the group settings page, expand **Quota Management** on the left → Click th
 
 </Tab>
 </Tabs>
+</PremiumOnly>
 
 Token Quota is configured at three levels:
 
@@ -109,13 +113,9 @@ The maximum quota a group admin can assign to an individual member. Prevents gro
 Token limits and cost limits are enforced simultaneously. Reaching either limit will block further usage. Leave empty for unlimited.
 </Callout>
 
-### Cost Quota (Express Only)
+### Cost Quota
 
-<Callout type="info">
-This feature is only available in the **Express** edition. In the group settings page, expand **Quota Management** on the left → Click the **Cost Quota** tab.
-</Callout>
-
-Cost Quota uses monetary amounts (rather than token counts) to control API spending for the group and its members.
+In the group settings page, expand **Quota Management** on the left → Click the **Cost Quota** tab. Cost Quota uses monetary amounts (rather than token counts) to control API spending for the group and its members.
 
 <img src="/assets/images/en/admin/group-management-cost-quota-1_en.webp" alt="Cost Quota configuration" />
 
@@ -138,10 +138,6 @@ Token limits and cost limits are enforced simultaneously. When either limit is r
 </Callout>
 
 ### Temporary Quota Adjustment
-
-<Callout type="info">
-**Availability:** Currently available in the Express cloud edition.
-</Callout>
 
 On the **Quota Management** → **Cost Quota** or **Token Quota** page, each period-based limit field (daily / weekly / monthly) has a **+** temporary adjustment button. Use it to inject temporary allowance into **Group Total Quota** or **Default Member Quota** for the current period without modifying the saved quota.
 

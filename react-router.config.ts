@@ -3,8 +3,12 @@ import type { Config } from '@react-router/dev/config'
 import { createGetUrl, getSlugs } from 'fumadocs-core/source'
 
 import { i18n, locales } from './app/lib/i18n'
+import { isLangEntryAllowed, normalizeVariant } from './app/lib/variant'
 
 const getUrl = createGetUrl('/docs', i18n)
+
+// Node-only config — read from process.env directly.
+const VARIANT = normalizeVariant(process.env.DOCS_VARIANT)
 
 export default {
   ssr: false,
@@ -28,8 +32,16 @@ export default {
       }
     }
 
+    // Always prerender the bare /docs root (and /{lang}/docs) so a direct visit
+    // doesn't 404. The loader returns a redirect when no page matches the empty slug.
+    addPath('/docs')
+    for (const lang of locales) {
+      if (lang !== i18n.defaultLanguage) addPath(`/${lang}/docs`)
+    }
+
     for (const lang of locales) {
       for await (const entry of glob('**/*.mdx', { cwd: `content/docs/${lang}` })) {
+        if (!isLangEntryAllowed(entry, VARIANT)) continue
         const url = getUrl(getSlugs(entry), lang)
         addPath(url)
       }

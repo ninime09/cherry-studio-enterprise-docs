@@ -10,6 +10,9 @@ import { Callout } from 'fumadocs-ui/components/callout'
 **Navigation:** Admin Console → About → Application Information
 </Callout>
 
+<img src="/assets/images/zh/admin/about-us-application-info-express_zh.webp" alt="Application Information" />
+
+<PremiumOnly>
 <Tabs items={['Express', 'Premium']}>
 <Tab value="Express">
 
@@ -22,12 +25,17 @@ import { Callout } from 'fumadocs-ui/components/callout'
 
 </Tab>
 </Tabs>
+</PremiumOnly>
 
 ## Version and Status Monitoring
 
 The top area shows the "health" of the current deployment:
 
-<table><thead><tr><th width="104.90625">Field</th><th width="265.25390625">Description</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Current Version</strong></td><td>Version number of the current deployment (e.g., <code>0.4.10</code>).</td><td>Confirm compatibility and new feature support.</td></tr><tr><td><strong>Latest Version</strong></td><td>Latest officially released version (e.g., <code>0.4.10</code>).</td><td>Compare with current version to determine if an upgrade is needed.</td></tr><tr><td><strong>Build Version</strong></td><td>Internal build timestamp to the minute (e.g., <code>202603311021</code>).</td><td><strong>Key for troubleshooting</strong>. Provide this ID when reporting bugs.</td></tr><tr><td><strong>Service Status</strong></td><td>Real-time backend connectivity check.</td><td>● Running indicates healthy; red means check Docker logs immediately.</td></tr><tr><td><strong>System Update</strong> <em>(Premium only)</em></td><td>After configuring software updates, check and upgrade to the latest version.</td><td>Click "Configure Software Update" to set up first; then check and install updates online.</td></tr></tbody></table>
+<table><thead><tr><th width="104.90625">Field</th><th width="265.25390625">Description</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Current Version</strong></td><td>Version number of the current deployment (e.g., <code>0.4.10</code>).</td><td>Confirm compatibility and new feature support.</td></tr><tr><td><strong>Latest Version</strong></td><td>Latest officially released version (e.g., <code>0.4.10</code>).</td><td>Compare with current version to determine if an upgrade is needed.</td></tr><tr><td><strong>Build Version</strong></td><td>Internal build timestamp to the minute (e.g., <code>202603311021</code>).</td><td><strong>Key for troubleshooting</strong>. Provide this ID when reporting bugs.</td></tr><tr><td><strong>Service Status</strong></td><td>Real-time backend connectivity check.</td><td>● Running indicates healthy; red means check Docker logs immediately.</td></tr></tbody></table>
+
+<PremiumOnly>
+**System Update** (Premium only): After configuring software updates, check and upgrade to the latest version. Click "Configure Software Update" to set up first; then check and install updates online.
+</PremiumOnly>
 
 <Callout type="warn">
 **Note:** If **Service status** is abnormal, the frontend may still load but core backend functions (model calls, file parsing) will fail.
@@ -39,6 +47,8 @@ Admins can quickly access tools to ensure client/server version alignment:
 
 * **Client downloads:** Links for Windows and macOS clients.
 * **Documentation:** Link to official manuals (this doc site).
+
+<PremiumOnly>
 * **Docker images** *(Premium only)*: Link to Docker Hub for server upgrades.
 
 <Callout type="info">
@@ -47,3 +57,4 @@ Admins can quickly access tools to ensure client/server version alignment:
 docker-registry.cherry-ai.com/public/cherry-studio-enterprise-api:v0.4.10
 ```
 </Callout>
+</PremiumOnly>

@@ -12,6 +12,18 @@ const OUTPUT_FILE = 'public/api/search.json'
 const LOCALES = ['en', 'zh', 'ja']
 const DEFAULT_LOCALE = 'en'
 
+// Mirror app/lib/variant.ts. Kept inline so the .mjs script has no TS dep.
+const VARIANT = process.env.DOCS_VARIANT === 'selfhost' ? 'selfhost' : 'saas'
+const VARIANT_TOP_LEVEL = {
+  saas: new Set(['index', 'quickstart', 'admin', 'client', 'pricing', 'contact']),
+  selfhost: new Set(['setup', 'contact'])
+}
+function isLangEntryAllowed(entry) {
+  const first = entry.split('/')[0]
+  const slug = first.replace(/\.(mdx?|json|ya?ml)$/i, '')
+  return VARIANT_TOP_LEVEL[VARIANT].has(slug)
+}
+
 const advancedSchema = {
   content: 'string',
   page_id: 'string',
@@ -59,8 +71,15 @@ function slugify(text) {
     .replace(/^-|-$/g, '')
 }
 
+// Strip <PremiumOnly>...</PremiumOnly> blocks unless VITE_SHOW_PREMIUM=true.
+const SHOW_PREMIUM = process.env.VITE_SHOW_PREMIUM === 'true'
+function stripPremiumBlocks(body) {
+  if (SHOW_PREMIUM) return body
+  return body.replace(/<PremiumOnly>[\s\S]*?<\/PremiumOnly>/g, '')
+}
+
 function extractHeadings(body) {
-  const clean = body.replace(/```[\s\S]*?```/g, '')
+  const clean = stripPremiumBlocks(body).replace(/```[\s\S]*?```/g, '')
   const headings = []
   const regex = /^(#{1,3})\s+(.+)$/gm
   let m
@@ -114,7 +133,10 @@ async function getMdxFiles(dir) {
 
 async function buildLocaleIndex(locale) {
   const dir = join(CONTENT_DIR, locale)
-  const files = await getMdxFiles(dir)
+  const allFiles = await getMdxFiles(dir)
+  const files = allFiles.filter((file) =>
+    isLangEntryAllowed(relative(dir, file).replace(/\\/g, '/'))
+  )
   const breadcrumbMap = await buildBreadcrumbMap(dir)
 
   // Build title map from MDX frontmatter for leaf page breadcrumbs

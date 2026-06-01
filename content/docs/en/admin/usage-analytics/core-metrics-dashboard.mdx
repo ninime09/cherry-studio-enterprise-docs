@@ -8,12 +8,12 @@ import { Callout } from 'fumadocs-ui/components/callout'
 
 ## Dashboard Overview
 
-The core metrics dashboard displays key KPIs as metric cards. Express offers both **Token** and **Cost** views, while Premium provides a unified token usage view.
+The core metrics dashboard displays key KPIs as metric cards, with both **Token** and **Cost** views.
 
-<Tabs items={['Express — Token', 'Express — Cost', 'Premium']}>
-<Tab value="Express — Token">
+<Tabs items={['Token', 'Cost']}>
+<Tab value="Token">
 
-<img src="/assets/images/en/admin/usage-analytics-core-metrics-express-token_en.webp" alt="Express Token Dashboard" />
+<img src="/assets/images/en/admin/usage-analytics-core-metrics-express-token_en.webp" alt="Token Dashboard" />
 
 ### Metric Details
 
@@ -29,9 +29,9 @@ The core metrics dashboard displays key KPIs as metric cards. Express offers bot
 | **Cache Write Tokens** | Tokens written to cache for subsequent reuse. |
 
 </Tab>
-<Tab value="Express — Cost">
+<Tab value="Cost">
 
-<img src="/assets/images/en/admin/usage-analytics-core-metrics-express-cost_en.webp" alt="Express Cost Dashboard" />
+<img src="/assets/images/en/admin/usage-analytics-core-metrics-express-cost_en.webp" alt="Cost Dashboard" />
 
 ### Metric Details
 
@@ -47,11 +47,15 @@ The core metrics dashboard displays key KPIs as metric cards. Express offers bot
 | **Active Models** | Number of AI models invoked. |
 
 </Tab>
-<Tab value="Premium">
+</Tabs>
+
+<PremiumOnly>
+
+### Premium Core Metrics Dashboard
 
 <img src="/assets/images/en/admin/usage-analytics-core-metrics_en.webp" alt="Premium Core Metrics Dashboard" />
 
-### Metric Details
+#### Metric Details
 
 | Metric | Description |
 | --- | --- |
@@ -68,7 +72,6 @@ The core metrics dashboard displays key KPIs as metric cards. Express offers bot
 **Ops tip:** If **Interrupted** spikes, check **System Settings > Model Provider** connectivity or external network stability.
 </Callout>
 
-</Tab>
-</Tabs>
+</PremiumOnly>
 
 ***

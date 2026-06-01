@@ -3,33 +3,28 @@ title: Client
 description: "An AI work assistant built for enterprise employees, providing intelligent chat, knowledge retrieval, agents, MCP tools, and mini programs as a one-stop workspace."
 ---
 
-import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
 import { Callout } from 'fumadocs-ui/components/callout'
 
 ## Download and Sign In
 
-- **Client download**: https://enterprise.cherry-ai.com/
+- **Client download**: https://enterprise.cherryai.com.cn/download
 
-The client supports two login modes corresponding to different deployment editions. Switch between them using the toggle in the bottom-right corner of the login page.
+<img src="/assets/images/en/client-login-express_en.webp" alt="Client Login — Cloud Service" />
 
-<Tabs items={['Express (Cloud Service)', 'Premium (Private Deployment)']}>
-<Tab value="Express (Cloud Service)">
-
-<img src="/assets/images/en/client-login-express_en.webp" alt="Express Login — Cloud Service" />
-
-Express uses cloud service login with two options:
+The client signs in with a cloud account using one of these options:
 
 - **Login with SMS code**: Enter your phone number, receive a verification code, and log in.
 - **Login with password**: Log in with your registered phone number and password.
 
 If you don't have an account yet, click "Register" in the bottom-left corner.
 
-</Tab>
-<Tab value="Premium (Private Deployment)">
+<PremiumOnly>
+
+### Self-Hosted Login
 
 <img src="/assets/images/en/client-login-premium_en.webp" alt="Premium Login — Private Deployment" />
 
-Premium uses private deployment login. Fill in the following:
+For self-hosted deployments, fill in the following:
 
 - **Server URL**: Your organization's self-hosted server URL.
 - **Username**: Username assigned by your administrator.
@@ -41,12 +36,9 @@ If SSO is configured, you can also click "SSO Login" in the bottom-left corner.
 **Demo account:** Server URL `https://api.demo.cherry-ai.com`, Username `user`, Password `password`
 </Callout>
 
-</Tab>
-</Tabs>
-
-<Callout type="info">
 Click "Private Deployment" or "Cloud Service" in the bottom-right corner of the login page to switch between login modes.
-</Callout>
+
+</PremiumOnly>
 
 ## Core Features
 

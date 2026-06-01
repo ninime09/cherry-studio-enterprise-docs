@@ -1,45 +1,23 @@
 ---
 title: Pricing
-description: "Cherry Studio Enterprise offers Express (cloud subscription) and Premium (self-hosted) plans to meet the needs of organizations of any size."
+description: "Cherry Studio Enterprise — subscription-based plans plus Token-based usage. Supports Alipay and bank transfer; activate on demand and scale flexibly."
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout'
 
-## Edition Selection Guide
+## Subscription Plans
 
-### Express vs Premium
+Cherry Studio Enterprise uses a **subscription model** — choose a plan based on your team size:
 
-Both editions share the **same core enterprise features**. The key differences are in deployment and billing:
-
-| | **Express** (Cloud-Hosted) | **Premium** (Self-Hosted) |
-| --- | --- | --- |
-| **Deployment** | No deployment needed — sign up and start | Deploy yourself with Docker / Helm |
-| **Data Storage** | Hosted on Cherry Studio cloud | Entirely on your own servers |
-| **Provider Configuration** | Built-in major LLMs, out of the box | Fully configurable with custom providers and private models |
-| **Billing** | Subscription + Token-based consumption | License (perpetual) |
-| **Users** | Tiered by subscription plan | Tiered by license |
-| **Support** | Online support | Dedicated technical support (annual service fee) |
-
-### How to Choose?
-
-- **Choose Express**: Zero deployment, instant access, mainstream LLMs, pay-as-you-go
-- **Choose Premium**: Full data privacy, private model integration, or compliance requirements
-
-## Express Pricing
-
-### Subscription Plans
-
-Express uses a **subscription model** — choose a plan based on your team size:
-
-<img src="/assets/images/en/express/select-plan.webp" alt="Express plan selection page" />
+<img src="/assets/images/en/express/select-plan.webp" alt="Plan selection page" />
 
 Supported payment methods:
 - **Alipay** — instant scan-to-pay
 - **Bank transfer** — for organizations requiring invoices
 
-### Token Consumption
+## Token Consumption
 
-AI conversations in Express are billed per Token consumed. Different models have different Token unit prices:
+AI conversations are billed per Token consumed. Different models have different Token unit prices:
 
 <img src="/assets/images/en/admin/provider-management-express-1_en.webp" alt="Token pricing" />
 
@@ -50,9 +28,53 @@ AI conversations in Express are billed per Token consumed. Different models have
   [View Orders & Payments details →](/docs/admin/order-management)
 </Callout>
 
-## Premium Pricing
+## Core Capabilities
 
-Premium uses a **perpetual license** with tiered pricing by headcount:
+| Module | Description |
+| --- | --- |
+| Core functionality | Multi-model AI chat with multimodal support (text, images, files) |
+| Provider management | Built-in mainstream LLM services, out of the box |
+| Default model settings | Configure assistant, topic naming, and translation models to balance experience and cost |
+| User & group management | Employee accounts and group-based permission control for fine-grained AI resource access |
+| Assistant management | Create AI assistants with preset roles, knowledge bases, and tools, distribute by user group |
+| Assistant library | Centrally manage reusable assistant templates, one-click import from the built-in template market |
+| Agent management | AI agents with multi-model collaboration, skill binding, and MCP tool integration |
+| Agent skills | Manage reusable skill modules, add manually or download from the community marketplace |
+| Knowledge base | Enterprise RAG engine that vectorizes documents for accurate AI-powered Q&A |
+| MCP servers | Connect external tools and data sources via the MCP protocol |
+| Mini programs | Integrate external AI tools and web services into the client sidebar |
+| Usage analytics | Multi-dimensional dashboards for real-time Token consumption and cost monitoring |
+| System settings | Network proxy, search engine integration, OCR document preprocessing, and cache management |
+| API gateway | Call enterprise models from external apps and IDE plugins via API Key |
+
+**System support**: Windows 7+, macOS, Linux
+
+For product pricing details, see the official site: https://enterprise.cherry-ai.com/
+
+## How to Purchase
+
+Sign up online to get started. Alipay and bank transfer supported.
+
+<Callout type="info">
+  [Quickstart →](/docs/quickstart)
+</Callout>
+
+<Callout type="info">
+  Have a discount code? See [Using a Discount Code](/docs/admin/order-management/using-discount-code).
+</Callout>
+
+### 🎯 Free Trial
+
+We provide a complete demo environment so you can fully evaluate product features before purchasing:
+
+- **Admin console demo**: [https://admin.demo.cherry-ai.com/](https://admin.demo.cherry-ai.com/) (Username: admin, Password: password)
+- **Client download**: [https://enterprise.cherryai.com.cn/download](https://enterprise.cherryai.com.cn/download)
+
+<PremiumOnly>
+
+## Premium (Self-Hosted)
+
+Need full data privacy, integration with private models, or special compliance requirements? Cherry Studio also offers Premium (self-hosted) with a **perpetual license** model, priced by headcount:
 
 | Team Size | Description |
 | --- | --- |
@@ -74,112 +96,15 @@ After purchasing a Premium license, you can optionally add an annual support fee
 - Custom requirement consultation
 - Training and usage guidance
 
-## Core Edition Comparison
+### Edition Comparison
 
 | Feature | Express | Premium |
 | --- | --- | --- |
 | **Pricing** | Subscription-based | [Contact us](/docs/contact) |
 | **License** | Subscription agreement | Commercial license (perpetual) |
-| **Users** | Tiered by plan | Tiered by license |
-| **Deployment** | Cloud-hosted, no deployment | Self-hosted (Docker / K8s) |
-| **Support** | Online support | Dedicated support |
-| **System** | Windows 7+, macOS, Linux | Windows 7+, macOS, Linux |
-| **Provider Management** | Built-in major LLMs, out of the box, **no customization** | Fully configurable, private models supported |
+| **Deployment** | Cloud-hosted, no deployment | Self-hosted (Docker / Helm) |
+| **Support** | Online support | Dedicated support (annual service fee required) |
+| **Provider Management** | Built-in major LLMs, out of the box | Fully configurable, private models supported |
 | **Enterprise Features** | ✅ Full features | ✅ Full features |
 
-For product pricing details, see the official comparison: https://enterprise.cherry-ai.com/
-
-## Detailed Plan Descriptions
-
-### Express
-
-<table>
-<tbody>
-<tr><td><strong>Target users</strong></td><td>Startups, small and mid-sized teams</td></tr>
-<tr><td><strong>Pricing</strong></td><td>Subscription + Token-based consumption</td></tr>
-<tr><td><strong>Deployment</strong></td><td>Cloud-hosted, no deployment, sign up and start</td></tr>
-<tr><td><strong>Support</strong></td><td>Online support</td></tr>
-<tr><td><strong>Providers</strong></td><td>Built-in major domestic and global LLMs, out of the box (<strong>no customization</strong>)</td></tr>
-</tbody>
-</table>
-
-**Core features** (same as Premium):
-
-| Module | Description |
-| --- | --- |
-| Core functionality | Multi-model AI chat with multimodal support (text, images, files) |
-| Provider management | Built-in mainstream LLM services, out of the box |
-| Default model settings | Configure assistant, topic naming, and translation models to balance experience and cost |
-| User & group management | Employee accounts and group-based permission control for fine-grained AI resource access |
-| Assistant management | Create AI assistants with preset roles, knowledge bases, and tools, distribute by user group |
-| Assistant library | Centrally manage reusable assistant templates, one-click import from the built-in template market |
-| Agent management | AI agents with multi-model collaboration, skill binding, and MCP tool integration |
-| Agent skills | Manage reusable skill modules, add manually or download from the community marketplace |
-| Knowledge base | Enterprise RAG engine that vectorizes documents for accurate AI-powered Q&A |
-| MCP servers | Connect external tools and data sources via the MCP protocol |
-| Mini programs | Integrate external AI tools and web services into the client sidebar |
-| Usage analytics | Multi-dimensional dashboards for real-time Token consumption and cost monitoring |
-| System settings | Network proxy, search engine integration, OCR document preprocessing, and cache management |
-| API gateway | Call enterprise models from external apps and IDE plugins via API Key |
-
-**Use cases**: Small and mid-sized businesses that want zero deployment, out-of-the-box access, and flexible pay-as-you-go scaling
-
----
-
-### Premium
-
-<table>
-<tbody>
-<tr><td><strong>Target users</strong></td><td>Medium to large enterprises with high security and management requirements</td></tr>
-<tr><td><strong>Pricing</strong></td><td><a href="/docs/contact">Contact us for pricing</a></td></tr>
-<tr><td><strong>License</strong></td><td>Commercial license (perpetual)</td></tr>
-<tr><td><strong>Deployment</strong></td><td>Self-hosted (Docker / Helm)</td></tr>
-<tr><td><strong>Support</strong></td><td>Dedicated technical support (annual service fee required)</td></tr>
-<tr><td><strong>Providers</strong></td><td>Fully configurable, add custom providers and private models</td></tr>
-</tbody>
-</table>
-
-**Core features** (same as Express, plus the following):
-
-- Fully configurable with any custom provider and private models (Express is limited to built-in providers)
-- Supports connecting to enterprise intranet or self-hosted LLM services
-- Data stored entirely on your own servers, meeting compliance requirements
-
-**Use cases**: Enterprises that need full data privacy, private model integration, or self-hosted LLM services
-
-## How to Purchase
-
-### Express
-
-Sign up online to get started. Alipay and bank transfer supported.
-
-<Callout type="info">
-  [Express Quickstart →](/docs/quickstart#express)
-</Callout>
-
-<Callout type="info">
-  Have a discount code? See [Using a Discount Code](/docs/admin/order-management/using-discount-code).
-</Callout>
-
-### Premium
-
-Contact us for a custom quote:
-
-- **Business email**: bd@cherry-ai.com
-- **Phone**: +86 13681876646
-- **WeChat for Business**:
-
-<img src="/assets/images/wechat-enterprise-qr.webp" alt="WeChat for Business QR Code" style={{maxWidth: '200px'}} />
-
-**Support email**: support@cherry-ai.com
-
-### 🎯 Free Trial
-
-We provide a complete demo environment so you can fully evaluate product features before purchasing:
-
-- **Admin console demo**: [https://admin.demo.cherry-ai.com/](https://admin.demo.cherry-ai.com/) (Username: admin, Password: password)
-- **Client download**: [https://enterprise.cherry-ai.com/](https://enterprise.cherry-ai.com/)
-
----
-
-**Note**: Prices are for reference only. Please contact the sales team for the latest discounts and quotations. Enterprise customers can tailor solutions based on specific needs.
+</PremiumOnly>

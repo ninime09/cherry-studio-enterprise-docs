@@ -1,6 +1,6 @@
 ---
 title: 紹介
-description: Cherry Studio エンタープライズ版は Express（クラウドホスト型）と Premium（プライベート導入型）の 2 つのエディションを提供し、あらゆる規模の企業の AI 管理ニーズに対応します。
+description: Cherry Studio エンタープライズ版 — 登録するだけで利用できるクラウド型 AI ワークスペース。統合モデル管理、知識ベース、権限制御、セキュリティとコンプライアンスを企業に提供します。
 ---
 
 import { Card, Cards } from 'fumadocs-ui/components/card'
@@ -11,47 +11,43 @@ import { DynamicLink } from 'fumadocs-core/dynamic-link'
 <img src="/assets/images/ja/intro-hero.webp" alt="Cherry Studio エンタープライズ版" />
 <img src="/assets/images/ja/intro-admin.webp" alt="Cherry Studio 管理コンソール" />
 
-## エディション概要
+## 製品概要
 
-Cherry Studio エンタープライズ版には 2 つのエディションがあります。ニーズに合わせてお選びください：
+Cherry Studio エンタープライズ版は、企業向けのクラウド型 AI ワークスペースです。導入不要、登録するだけで利用を開始できます：
 
-| | **Express 版**（クラウドホスト型） | **Premium 版**（プライベート導入型） |
-| --- | --- | --- |
-| **導入方式** | 導入不要、登録するだけですぐ利用可能 | Docker / Helm で自社導入 |
-| **データ保存** | Cherry Studio クラウドで管理 | お客様のサーバーに完全保存 |
-| **運用** | Cherry Studio が保守 | お客様自身で運用 |
-| **課金方式** | サブスクリプション（Alipay／銀行振込） | ライセンスベース |
+- **導入不要**：アカウント登録後すぐに利用可能。サーバー準備やインフラ設定は不要
+- **サブスクリプション**：チーム規模に応じたプランを選択。Alipay と銀行振込に対応
+- **すぐに使えるモデル**：OpenAI、Claude、Gemini などの主要 LLM が組み込み済み。従業員が個別に設定する必要はありません
 
-<Callout type="info" title="どちらを選ぶべき？">
-- **導入不要で今すぐ使いたい** → <DynamicLink href="/[lang]/docs/quickstart#express">Express 版クイックスタート</DynamicLink>
-- **データを完全に自社管理したい** → <DynamicLink href="/[lang]/docs/quickstart#premium">Premium 版クイックスタート</DynamicLink>
+<Callout type="info" title="始めましょう">
+準備はできましたか？<DynamicLink href="/[lang]/docs/quickstart">クイックスタート</DynamicLink> で 5 分以内に登録してチームを招待できます。
 </Callout>
 
 ## 主な特長
 
 <Cards>
-  <Card icon={<KeyRound />} title="統合モデル管理" description="各種クラウド LLM の接続と管理を集中化し、オンプレ/私有化にも対応。従業員は設定不要で利用できます" />
+  <Card icon={<KeyRound />} title="統合モデル管理" description="主要な大規模言語モデルを集中管理。従業員は設定不要で利用できます" />
   <Card icon={<BookText />} title="エンタープライズ知識ベース" description="チーム共有の知識ベースを構築・管理し、統一知識に基づく AI 対話で回答品質を向上します" />
   <Card icon={<Users />} title="きめ細かな権限制御" description="統合管理コンソールで役割ベースの権限付与と柔軟なリソースアクセス制御を実現します" />
-  <Card icon={<Server />} title="柔軟な導入方式" description="Express 版はクラウドですぐ利用可能、Premium 版はオンプレ/プライベートクラウドに導入しデータを 100% 自社管理" />
+  <Card icon={<Server />} title="クラウドホスト、すぐに利用可能" description="導入不要・運用負荷なし。登録するだけで使えます。サービスは Cherry Studio が保守します" />
   <Card icon={<RefreshCw />} title="信頼できるバックエンドサービス" description="安定した API サービスとエンタープライズ級のバックアップ/復旧で事業継続性を確保します" />
   <Card icon={<ShieldCheck />} title="セキュリティとコンプライアンス" description="厳格なセキュリティ/コンプライアンス要件に対応し、監査ログで利用履歴を追跡できます" />
 </Cards>
 
 ## データセキュリティと隔離
 
-どちらのエディションを選んでも、Cherry Studio エンタープライズ版はデータ保護を多層的に提供します：
+Cherry Studio エンタープライズ版はデータ保護を多層的に提供します：
 
-| セキュリティ | Express 版 | Premium 版 |
-| --- | --- | --- |
-| **データ隔離** | グループベースの厳格な隔離——各組織のデータは完全に分離され、他の組織からは参照不可 | 独立導入による物理的隔離 |
-| **通信暗号化** | 全通信 HTTPS 暗号化 | お客様側で SSL/TLS を設定 |
-| **認証** | JWT + OAuth2 認証、パスワードは暗号化保存 | JWT 認証、パスワードは暗号化保存 |
-| **アクセス制御** | ロールベースのきめ細かな権限体系（管理者 / グループ管理者 / メンバー） | 同左 |
-| **API セキュリティ** | 独立した API Key、ユーザーごとのアクセス権隔離 | 同左 |
+| セキュリティ | 説明 |
+| --- | --- |
+| **データ隔離** | グループベースの厳格な隔離——各組織のデータは完全に分離され、他の組織からは参照不可 |
+| **通信暗号化** | 全通信 HTTPS 暗号化 |
+| **認証** | JWT + OAuth2 認証、パスワードは暗号化保存 |
+| **アクセス制御** | ロールベースのきめ細かな権限体系（管理者 / グループ管理者 / メンバー） |
+| **API セキュリティ** | 独立した API Key、ユーザーごとのアクセス権隔離 |
 
-<Callout type="info" title="Express 版のデータ隔離メカニズム">
-Express 版は共有インフラ＋アプリケーション層隔離アーキテクチャを採用しています。各組織のデータ（モデル設定、知識ベース、アシスタント、ファイルなど）はグループ隔離メカニズムにより厳密に分離されます。すべての API リクエストは認証と権限チェックを経由し、自組織のデータのみアクセス可能です。
+<Callout type="info" title="データ隔離メカニズム">
+エンタープライズ版は共有インフラ＋アプリケーション層隔離アーキテクチャを採用しています。各組織のデータ（モデル設定、知識ベース、アシスタント、ファイルなど）はグループ隔離メカニズムにより厳密に分離されます。すべての API リクエストは認証と権限チェックを経由し、自組織のデータのみアクセス可能です。
 </Callout>
 
 ## クイック体験
@@ -80,7 +76,22 @@ Express 版は共有インフラ＋アプリケーション層隔離アーキテ
       { label: "パスワード", value: "password" }
     ]}
     buttonText="クライアントをダウンロード"
-    buttonHref="https://enterprise.cherry-ai.com/"
+    buttonHref="https://enterprise.cherryai.com.cn/download"
     buttonIcon="download"
   />
 </ExperienceCards>
+
+<PremiumOnly>
+
+## Premium 版（プライベート導入）
+
+Cherry Studio エンタープライズ版を自社サーバーへ導入したい場合（完全なデータ私有化、プライベートモデルとの統合、特殊なコンプライアンス要件等）、プライベート導入プランについて営業までお問い合わせください。
+
+| | **Express 版**（クラウドホスト型） | **Premium 版**（プライベート導入型） |
+| --- | --- | --- |
+| **導入方式** | 導入不要、登録するだけですぐ利用可能 | Docker / Helm で自社導入 |
+| **データ保存** | Cherry Studio クラウドで管理 | お客様のサーバーに完全保存 |
+| **運用** | Cherry Studio が保守 | お客様自身で運用 |
+| **課金方式** | サブスクリプション（Alipay／銀行振込） | ライセンスベース |
+
+</PremiumOnly>

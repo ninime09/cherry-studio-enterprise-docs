@@ -1,9 +1,11 @@
 ---
-title: "Provider Management (Premium)"
+title: "Provider Management (Standard Protocols)"
 description: "Onboard mainstream model providers via standard protocols (OpenAI, Anthropic, Google, etc.)."
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout'
+
+<PremiumOnly>
 
 ## Overview
 
@@ -95,3 +97,5 @@ A: Some OpenAI-compatible providers do not support listing models (`/v1/models`)
 **Q: Why can't my assistant use the knowledge base?**
 
 A: Check whether the assistant's model has the 🔧 (Function Calling) icon. Some lightweight or legacy models do not support tool calls, so knowledge base retrieval won't work.
+
+</PremiumOnly>

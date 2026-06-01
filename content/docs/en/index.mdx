@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: Cherry Studio Enterprise offers Express (cloud-hosted) and Premium (self-hosted) editions to meet AI management needs for organizations of any size.
+description: Cherry Studio Enterprise — a cloud-hosted AI workspace that gives teams unified model management, knowledge bases, access control, and security compliance.
 ---
 
 import { Card, Cards } from 'fumadocs-ui/components/card'
@@ -10,47 +10,43 @@ import { KeyRound, BookText, Users, Server, RefreshCw, ShieldCheck } from 'lucid
 <img src="/assets/images/en/intro-hero.webp" alt="Cherry Studio Enterprise" />
 <img src="/assets/images/en/intro-admin.webp" alt="Cherry Studio Admin Console" />
 
-## Edition Overview
+## Product Overview
 
-Cherry Studio Enterprise comes in two editions — choose the one that fits your needs:
+Cherry Studio Enterprise is a cloud-hosted AI workspace for teams — no deployment, sign up and go:
 
-| | **Express** (Cloud-Hosted) | **Premium** (Self-Hosted) |
-| --- | --- | --- |
-| **Deployment** | No deployment needed — sign up and start | Deploy yourself with Docker / Helm |
-| **Data Storage** | Hosted on Cherry Studio cloud | Entirely on your own servers |
-| **Ops** | Maintained by Cherry Studio | Maintained by your team |
-| **Billing** | Subscription plans (Alipay / bank transfer) | License-based |
+- **Zero deployment**: ready immediately after sign-up; no servers, no infrastructure to set up
+- **Subscription-based**: choose a plan that fits your team size; supports Alipay and bank transfer
+- **Built-in models**: OpenAI, Claude, Gemini and more pre-configured — employees don't have to wire up anything
 
-<Callout type="info" title="Which edition is right for you?">
-- Want **zero deployment, instant access** → [Express Quickstart](/docs/quickstart#express)
-- Need **full data privacy and control** → [Premium Quickstart](/docs/quickstart#premium)
+<Callout type="info" title="Get started">
+Ready to go? Head to [Quickstart](/docs/quickstart) — it takes about 5 minutes to register and invite your team.
 </Callout>
 
 ## Core Advantages
 
 <Cards>
-  <Card icon={<KeyRound />} title="Unified Model Management" description="Centralized access and management of cloud LLMs, with support for private on-prem deployment so employees can use it without configuration" />
+  <Card icon={<KeyRound />} title="Unified Model Management" description="Centralized access and management of mainstream LLMs so employees can use them without configuration" />
   <Card icon={<BookText />} title="Enterprise Knowledge Base" description="Build and manage shared team knowledge bases, grounding AI interactions in unified knowledge to improve answer quality" />
   <Card icon={<Users />} title="Fine-Grained Access Control" description="A unified admin console with role-based permissions and flexible resource access control" />
-  <Card icon={<Server />} title="Flexible Deployment" description="Express edition is cloud-ready out of the box; Premium edition supports on-prem and private cloud with 100% data privacy" />
+  <Card icon={<Server />} title="Cloud-Hosted, Out of the Box" description="No deployment, no ops — sign up and use it. The service is maintained by Cherry Studio" />
   <Card icon={<RefreshCw />} title="Reliable Backend Services" description="Stable API services and enterprise-grade backup and recovery to ensure business continuity" />
   <Card icon={<ShieldCheck />} title="Security and Compliance" description="Meets strict security and compliance requirements, supports audit logs, and keeps data usage traceable" />
 </Cards>
 
 ## Data Security and Isolation
 
-Regardless of which edition you choose, Cherry Studio Enterprise provides multiple layers of data protection:
+Cherry Studio Enterprise provides multiple layers of data protection:
 
-| Security | Express | Premium |
-| --- | --- | --- |
-| **Data Isolation** | Strict group-based isolation — each organization's data is completely separate and invisible to others | Independent deployment with natural physical isolation |
-| **Encryption in Transit** | End-to-end HTTPS encryption | SSL/TLS configured by your team |
-| **Authentication** | JWT + OAuth2 with encrypted password storage | JWT with encrypted password storage |
-| **Access Control** | Role-based fine-grained permissions (Admin / Group Admin / Member) | Same |
-| **API Security** | Independent API keys with per-user access isolation | Same |
+| Security | Description |
+| --- | --- |
+| **Data Isolation** | Strict group-based isolation — each organization's data is completely separate and invisible to others |
+| **Encryption in Transit** | End-to-end HTTPS encryption |
+| **Authentication** | JWT + OAuth2 with encrypted password storage |
+| **Access Control** | Role-based fine-grained permissions (Admin / Group Admin / Member) |
+| **API Security** | Independent API keys with per-user access isolation |
 
-<Callout type="info" title="Express Data Isolation">
-Express uses a shared infrastructure with application-level isolation. Each organization's data (model configurations, knowledge bases, assistants, files, etc.) is strictly isolated by group. Every API request goes through authentication and permission checks, ensuring access is limited to your organization's data only.
+<Callout type="info" title="Data Isolation">
+Cherry Studio Enterprise uses shared infrastructure with application-level isolation. Each organization's data (model configurations, knowledge bases, assistants, files, etc.) is strictly isolated by group. Every API request goes through authentication and permission checks, ensuring access is limited to your organization's data only.
 </Callout>
 
 ## Quick Experience
@@ -79,7 +75,22 @@ Express uses a shared infrastructure with application-level isolation. Each orga
       { label: "Password", value: "password" }
     ]}
     buttonText="Download Client"
-    buttonHref="https://enterprise.cherry-ai.com/"
+    buttonHref="https://enterprise.cherryai.com.cn/download"
     buttonIcon="download"
   />
 </ExperienceCards>
+
+<PremiumOnly>
+
+## Premium (Self-Hosted)
+
+If you need to deploy Cherry Studio Enterprise on your own infrastructure — for full data privacy, integration with private models, or specific compliance requirements — please contact sales for the self-hosted deployment plan.
+
+| | **Express** (Cloud-Hosted) | **Premium** (Self-Hosted) |
+| --- | --- | --- |
+| **Deployment** | No deployment needed — sign up and start | Deploy yourself with Docker / Helm |
+| **Data Storage** | Hosted on Cherry Studio cloud | Entirely on your own servers |
+| **Ops** | Maintained by Cherry Studio | Maintained by your team |
+| **Billing** | Subscription plans (Alipay / bank transfer) | License-based |
+
+</PremiumOnly>

@@ -18,6 +18,15 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
    * **管理者への昇格**：**グループ管理者** をオンにすると管理者権限が付与されます。
 4. **ユーザー更新** をクリックして保存。
 
+ユーザー編集パネルには、所属グループ、ユーザー名、アクティブステータス、グループ管理者が含まれます。
+
+<img src="/assets/images/ja/admin/user-management-edit-user-modal-express_ja.webp" alt="ユーザー編集モーダル" />
+
+<Callout type="info">
+ユーザーは招待リンクで自分で登録し、パスワードも自分で管理します。管理者がパスワードを確認・リセットすることはできません。
+</Callout>
+
+<PremiumOnly>
 <Tabs items={['Express 版', 'Premium 版']}>
 <Tab value="Express 版">
 
@@ -40,6 +49,7 @@ Express 版のユーザーは招待リンクで自分で登録し、パスワー
 
 </Tab>
 </Tabs>
+</PremiumOnly>
 
 ## ユーザー削除 <a href="#heading8ca0746f50e147119c6c47d6dded5dd2-shan-chu-yong-hu-0" id="heading8ca0746f50e147119c6c47d6dded5dd2-shan-chu-yong-hu-0"></a>
 

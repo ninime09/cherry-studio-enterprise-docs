@@ -18,6 +18,15 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
    * **提升管理员**：开启 **组管理员** 开关，将该用户设为管理员。
 4. 点击 **更新用户** 保存。
 
+编辑用户面板包含：所属分组、用户名、激活状态、组管理员。
+
+<img src="/assets/images/zh/admin/user-management-edit-user-modal-express_zh.webp" alt="编辑用户弹窗" />
+
+<Callout type="info">
+用户通过邀请链接自行注册，密码由用户自行管理，管理员无法查看或重置密码。
+</Callout>
+
+<PremiumOnly>
 <Tabs items={['Express 版', 'Premium 版']}>
 <Tab value="Express 版">
 
@@ -40,6 +49,7 @@ Express 版用户通过邀请链接自行注册，密码由用户自行管理，
 
 </Tab>
 </Tabs>
+</PremiumOnly>
 
 ## 删除用户 <a href="#heading8ca0746f50e147119c6c47d6dded5dd2-shan-chu-yong-hu-0" id="heading8ca0746f50e147119c6c47d6dded5dd2-shan-chu-yong-hu-0"></a>
 

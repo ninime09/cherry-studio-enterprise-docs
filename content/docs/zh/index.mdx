@@ -1,6 +1,6 @@
 ---
 title: 介绍
-description: Cherry Studio 企业版提供 Express（云端托管）和 Premium（私有化部署）两个版本，满足不同规模企业的 AI 管理需求。
+description: Cherry Studio 企业版 — 注册即用的 AI 工作空间，为企业提供统一的模型管理、知识库、权限控制与安全合规能力。
 ---
 
 import { Card, Cards } from 'fumadocs-ui/components/card'
@@ -11,47 +11,43 @@ import { DynamicLink } from 'fumadocs-core/dynamic-link'
 <img src="/assets/images/zh/intro-hero.webp" alt="Cherry Studio 企业版" />
 <img src="/assets/images/zh/intro-admin.webp" alt="Cherry Studio 管理后台" />
 
-## 版本概览
+## 产品概览
 
-Cherry Studio 企业版提供两个版本，您可以根据需要选择：
+Cherry Studio 企业版是一套面向企业的 AI 工作空间，云端托管、无需部署，注册即可开始使用：
 
-| | **Express 版**（云端托管） | **Premium 版**（私有化部署） |
-| --- | --- | --- |
-| **部署方式** | 无需部署，注册即用 | Docker / Helm 自行部署 |
-| **数据存储** | Cherry Studio 云端托管 | 完全在您自己的服务器上 |
-| **运维** | 由 Cherry Studio 维护 | 企业自行运维 |
-| **计费方式** | 按套餐订阅（支持支付宝/对公转账） | 按授权许可证计费 |
+- **零部署**：开通账号后立即上手，无需准备服务器、无需配置基础设施
+- **按需订阅**：根据团队规模选择套餐，支持支付宝和对公转账
+- **开箱即用的模型**：内置 OpenAI、Claude、Gemini 等主流大模型，员工无需各自配置
 
-<Callout type="info" title="如何选择？">
-- 希望**零部署、即刻上手** → 选择 <DynamicLink href="/[lang]/docs/quickstart#express">Express 版快速开始</DynamicLink>
-- 需要**数据完全私有、自主可控** → 选择 <DynamicLink href="/[lang]/docs/quickstart#premium">Premium 版快速开始</DynamicLink>
+<Callout type="info" title="开始使用">
+准备好了吗？前往 <DynamicLink href="/[lang]/docs/quickstart">快速开始</DynamicLink>，5 分钟完成注册并邀请团队。
 </Callout>
 
 ## 核心优势
 
 <Cards>
-  <Card icon={<KeyRound />} title="统一模型管理" description="集中接入和管理各类云端大模型，支持本地私有化部署，员工无需配置即可使用" />
+  <Card icon={<KeyRound />} title="统一模型管理" description="集中接入和管理主流大模型，员工无需配置即可使用" />
   <Card icon={<BookText />} title="企业级知识库" description="构建和管理团队共享知识库，基于统一知识进行 AI 交互，提升回答质量" />
   <Card icon={<Users />} title="精细化权限控制" description="统一的管理后台，基于角色的权限分配，灵活的资源访问控制" />
-  <Card icon={<Server />} title="灵活的部署方式" description="Express 版云端开箱即用；Premium 版支持企业内网/私有云部署，数据 100% 私有可控" />
+  <Card icon={<Server />} title="云端托管，开箱即用" description="无需部署、无需运维，注册即用；服务由 Cherry Studio 维护" />
   <Card icon={<RefreshCw />} title="可靠的后端服务" description="提供稳定的 API 服务、企业级数据备份与恢复机制，保障业务连续性" />
-  <Card icon={<ShieldCheck />} title="安全合规保障" description="满足最严格的数据安全与合规要求，支持审计日志，确保数据使用可追溯" />
+  <Card icon={<ShieldCheck />} title="安全合规保障" description="满足严格的数据安全与合规要求，支持审计日志，确保数据使用可追溯" />
 </Cards>
 
 ## 数据安全与隔离
 
-无论您选择 Express 版还是 Premium 版，Cherry Studio 企业版都为您的数据安全提供多层保障：
+Cherry Studio 企业版为您的数据安全提供多层保障：
 
-| 安全能力 | Express 版 | Premium 版 |
-| --- | --- | --- |
-| **数据隔离** | 基于分组的严格数据隔离，各组织数据完全独立，互不可见 | 独立部署，天然物理隔离 |
-| **传输加密** | 全链路 HTTPS 加密 | 由企业自行配置 SSL/TLS |
-| **身份认证** | JWT + OAuth2 认证，密码加密存储 | JWT 认证，密码加密存储 |
-| **权限控制** | 基于角色的细粒度权限体系（管理员 / 组管理员 / 成员） | 同左 |
-| **API 安全** | 独立 API Key，按用户隔离调用权限 | 同左 |
+| 安全能力 | 说明 |
+| --- | --- |
+| **数据隔离** | 基于分组的严格数据隔离，各组织数据完全独立，互不可见 |
+| **传输加密** | 全链路 HTTPS 加密 |
+| **身份认证** | JWT + OAuth2 认证，密码加密存储 |
+| **权限控制** | 基于角色的细粒度权限体系（管理员 / 组管理员 / 成员） |
+| **API 安全** | 独立 API Key，按用户隔离调用权限 |
 
-<Callout type="info" title="Express 版数据隔离机制">
-Express 版采用共享基础设施 + 应用层隔离架构。每个组织的数据（模型配置、知识库、助手、文件等）通过严格的分组隔离机制互相隔离，任何 API 请求都会经过身份验证和权限校验，确保只能访问本组织的数据。
+<Callout type="info" title="数据隔离机制">
+企业版采用共享基础设施 + 应用层隔离架构。每个组织的数据（模型配置、知识库、助手、文件等）通过严格的分组隔离机制互相隔离，任何 API 请求都会经过身份验证和权限校验，确保只能访问本组织的数据。
 </Callout>
 
 ## 快速体验
@@ -80,8 +76,22 @@ Express 版采用共享基础设施 + 应用层隔离架构。每个组织的数
       { label: "密码", value: "password" }
     ]}
     buttonText="下载客户端"
-    buttonHref="https://enterprise.cherry-ai.com/"
+    buttonHref="https://enterprise.cherryai.com.cn/download"
     buttonIcon="download"
   />
 </ExperienceCards>
 
+<PremiumOnly>
+
+## Premium 版（私有化部署）
+
+如需将 Cherry Studio 企业版部署到您自己的服务器，满足完全私有化、对接私有化模型或特殊合规要求，请联系商务咨询私有化部署方案。
+
+| | **Express 版**（云端托管） | **Premium 版**（私有化部署） |
+| --- | --- | --- |
+| **部署方式** | 无需部署，注册即用 | Docker / Helm 自行部署 |
+| **数据存储** | Cherry Studio 云端托管 | 完全在您自己的服务器上 |
+| **运维** | 由 Cherry Studio 维护 | 企业自行运维 |
+| **计费方式** | 按套餐订阅（支持支付宝/对公转账） | 按授权许可证计费 |
+
+</PremiumOnly>

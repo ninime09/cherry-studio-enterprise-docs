@@ -9,6 +9,20 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # SaaS 使用文档（原站，docs.enterprise.cherry-ai.com） — SSH + SCP 到现有服务器
+          - variant: saas
+            transport: ssh
+            deploy_path_secret: DOCS_DEPLOY_PATH
+            default_deploy_path: /var/www/docs
+          # Express 私有化部署文档（deploy.cherry-ai.com） — FTP 到新服务器
+          # 沿用旧 build-and-deploy.yml 的 FTP_HOST / FTP_USERNAME / FTP_PASSWORD 三个 secret
+          - variant: selfhost
+            transport: ftp
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,29 +43,38 @@ jobs:
       - name: Process MDX files
         run: pnpm fumadocs-mdx
 
-      - name: Build application
+      - name: Build application (${{ matrix.variant }})
+        env:
+          DOCS_VARIANT: ${{ matrix.variant }}
+          VITE_DOCS_VARIANT: ${{ matrix.variant }}
         run: pnpm build
 
-      - name: Package build output
+      # ────────────────── SSH + SCP path (saas) ──────────────────
+
+      - name: Package build output (ssh)
+        if: matrix.transport == 'ssh'
         run: tar -czf docs-build.tar.gz -C build/client .
 
-      - name: Setup SSH key
+      - name: Setup SSH key (ssh)
+        if: matrix.transport == 'ssh'
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.DOCS_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p ${{ secrets.DOCS_SSH_PORT || 22 }} -H ${{ secrets.DOCS_SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy via SCP and SSH
+      - name: Deploy via SCP and SSH (${{ matrix.variant }})
+        if: matrix.transport == 'ssh'
         env:
           SSH_HOST: ${{ secrets.DOCS_SSH_HOST }}
           SSH_USER: ${{ secrets.DOCS_SSH_USER }}
           SSH_PORT: ${{ secrets.DOCS_SSH_PORT }}
-          DEPLOY_PATH: ${{ secrets.DOCS_DEPLOY_PATH }}
+          DEPLOY_PATH: ${{ secrets[matrix.deploy_path_secret] }}
+          DEFAULT_DEPLOY_PATH: ${{ matrix.default_deploy_path }}
         run: |
           SSH_KEY="-i ~/.ssh/deploy_key -o StrictHostKeyChecking=accept-new"
           PORT="${SSH_PORT:-22}"
-          REMOTE_PATH="${DEPLOY_PATH:-/var/www/docs}"
+          REMOTE_PATH="${DEPLOY_PATH:-$DEFAULT_DEPLOY_PATH}"
 
           # Upload archive (scp uses -P for port)
           scp $SSH_KEY -P $PORT docs-build.tar.gz ${SSH_USER}@${SSH_HOST}:/tmp/docs-build.tar.gz
@@ -65,3 +88,16 @@ jobs:
             tar -xzf /tmp/docs-build.tar.gz -C "${REMOTE_PATH}"
             rm -f /tmp/docs-build.tar.gz
           DEPLOY
+
+      # ────────────────── FTP path (selfhost) ──────────────────
+      # 复用旧 build-and-deploy.yml 的部署方式（SamKirkland/FTP-Deploy-Action + 同名 secret）
+
+      - name: Deploy to FTP server (${{ matrix.variant }})
+        if: matrix.transport == 'ftp'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./build/client/
+          server-dir: /

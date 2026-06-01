@@ -1,46 +1,24 @@
 ---
 title: 定价方案
-description: "Cherry Studio 企业版提供 Express（云端订阅）和 Premium（私有化部署）两种方案，满足不同规模企业的需求。"
+description: "Cherry Studio 企业版按套餐订阅 + Token 按量计费，支持支付宝和对公转账，按需开通、灵活扩展。"
 ---
 
 import { DynamicLink } from 'fumadocs-core/dynamic-link'
 import { Callout } from 'fumadocs-ui/components/callout'
 
-## 版本选择指南
+## 订阅套餐
 
-### Express 版 vs Premium 版
+Cherry Studio 企业版采用**订阅制**，根据团队规模选择套餐：
 
-两个版本在**核心功能上完全一致**，都包含完整的企业级能力。主要区别在于部署方式和计费模式：
-
-| | **Express 版**（云端托管） | **Premium 版**（私有化部署） |
-| --- | --- | --- |
-| **部署方式** | 无需部署，注册即用 | Docker / Helm 自行部署 |
-| **数据存储** | Cherry Studio 云端托管 | 完全在您自己的服务器上 |
-| **服务商配置** | 内置国内外主流大模型，开箱即用 | 完全自由配置，支持自定义服务商和私有化模型 |
-| **计费方式** | 按套餐订阅 + Token 按量消耗 | 授权许可证（买断制） |
-| **用户人数** | 按套餐阶梯 | 按许可证阶梯 |
-| **技术支持** | 在线客服 | 专属技术支持（需购买年度服务费） |
-
-### 如何选择？
-
-- **选择 Express 版**：希望零部署、即刻上手，使用主流大模型服务，按需付费
-- **选择 Premium 版**：需要数据完全私有、对接私有化模型、或有合规要求
-
-## Express 版定价
-
-### 订阅套餐
-
-Express 版采用**订阅制**，根据团队规模选择套餐：
-
-<img src="/assets/images/zh/express/select-plan.webp" alt="Express 套餐选择页面" />
+<img src="/assets/images/zh/express/select-plan.webp" alt="套餐选择页面" />
 
 支持的支付方式：
 - **支付宝** — 扫码即时到账
 - **对公转账** — 适合需要开票的企业
 
-### Token 消耗
+## Token 消耗
 
-Express 版的 AI 对话按 Token 消耗计费。不同模型的 Token 单价不同：
+AI 对话按 Token 消耗计费。不同模型的 Token 单价不同：
 
 <img src="/assets/images/zh/admin/provider-management-express-1_zh.webp" alt="Token 定价" />
 
@@ -51,9 +29,53 @@ Express 版的 AI 对话按 Token 消耗计费。不同模型的 Token 单价不
   <DynamicLink href="/[lang]/docs/admin/order-management">查看订单与支付详情 →</DynamicLink>
 </Callout>
 
-## Premium 版定价
+## 核心能力
 
-Premium 版采用**授权许可证**（买断制），按用户人数阶梯定价：
+| 功能模块 | 说明 |
+| --- | --- |
+| 基础功能 | 多模型 AI 对话、多模态支持（文本、图像、文件） |
+| 服务商管理 | 内置国内外主流大模型服务，开箱即用 |
+| 默认模型设置 | 配置助手模型、话题命名和翻译模型，平衡体验与成本 |
+| 用户与分组管理 | 员工账号管理与分组权限控制，精细分配 AI 资源访问权限 |
+| 助手管理 | 创建预置角色、知识库和工具的 AI 助手，按用户组分发 |
+| 助手库 | 集中管理可复用的助手模板，支持从内置模板市场一键导入 |
+| 智能体管理 | 支持多模型协作、技能绑定和 MCP 工具集成的 AI 智能体 |
+| 智能体技能 | 管理可复用的技能模块，支持手动添加或从社区市场下载 |
+| 知识库管理 | 企业级 RAG 引擎，将文档向量化实现精准问答 |
+| MCP 服务器 | 通过 MCP 协议连接外部工具和数据源 |
+| 小程序管理 | 将外部 AI 工具和 Web 服务集成到客户端侧边栏 |
+| 用量统计 | 多维度可视化看板，实时监控 Token 消耗与成本分布 |
+| 系统设置 | 网络代理、搜索引擎集成、OCR 文档预处理和缓存管理 |
+| API 网关 | 支持通过 API Key 在外部应用、IDE 插件中调用企业模型 |
+
+**系统支持**：Windows 7+、macOS、Linux
+
+产品定价信息参考官网：https://enterprise.cherry-ai.com/
+
+## 购买方式
+
+在线注册即可开始使用，支持支付宝和对公转账。
+
+<Callout type="info">
+  <DynamicLink href="/[lang]/docs/quickstart">快速开始 →</DynamicLink>
+</Callout>
+
+<Callout type="info">
+  有折扣码？参见 <DynamicLink href="/[lang]/docs/admin/order-management/using-discount-code">使用折扣码</DynamicLink>。
+</Callout>
+
+### 🎯 免费体验
+
+我们提供完整的体验环境，让您在购买前充分了解产品功能：
+
+- **管理后台体验**：[https://admin.demo.cherry-ai.com/](https://admin.demo.cherry-ai.com/)（用户名：admin，密码：password）
+- **客户端下载**：[https://enterprise.cherryai.com.cn/download](https://enterprise.cherryai.com.cn/download)
+
+<PremiumOnly>
+
+## Premium 版（私有化部署）
+
+需要数据完全私有、对接私有化模型，或有特殊合规要求？Cherry Studio 还提供 Premium 版（私有化部署），采用**授权许可证**（买断制），按用户人数阶梯定价：
 
 | 人数规模 | 说明 |
 | --- | --- |
@@ -75,112 +97,15 @@ Premium 版为定制报价，请 <DynamicLink href="/[lang]/docs/contact">联系
 - 定制化需求沟通
 - 培训和使用指导
 
-## 版本核心差异对比
+### 版本对比
 
 | 功能维度 | Express 版 | Premium 版 |
 | --- | --- | --- |
 | **定价** | 订阅制 | <DynamicLink href="/[lang]/docs/contact">联系我们</DynamicLink> |
 | **许可协议** | 订阅服务协议 | 商业许可（买断制） |
-| **用户人数** | 按套餐阶梯 | 按许可证阶梯 |
 | **部署方式** | 云端托管，无需部署 | 私有化部署 |
-| **技术支持** | 在线客服 | 专属技术支持 |
-| **系统支持** | Windows 7+, macOS, Linux | Windows 7+, macOS, Linux |
-| **服务商管理** | 内置主流大模型，开箱即用，**不可自定义** | 完全自由配置，支持私有化模型 |
+| **技术支持** | 在线客服 | 专属技术支持（需购买年度服务费） |
+| **服务商管理** | 内置主流大模型，开箱即用 | 完全自由配置，支持私有化模型 |
 | **企业级功能** | ✅ 完整企业功能 | ✅ 完整企业功能 |
 
-产品定价信息参考官网版本对比：https://enterprise.cherry-ai.com/
-
-## 各版本详细说明
-
-### Express 版
-
-<table>
-<tbody>
-<tr><td><strong>适用对象</strong></td><td>初创公司、中小型团队</td></tr>
-<tr><td><strong>定价</strong></td><td>订阅制 + Token 按量消耗</td></tr>
-<tr><td><strong>部署方式</strong></td><td>云端托管，无需部署，注册即用</td></tr>
-<tr><td><strong>技术支持</strong></td><td>在线客服</td></tr>
-<tr><td><strong>服务商</strong></td><td>内置国内外主流大模型，开箱即用（<strong>不可自定义</strong>）</td></tr>
-</tbody>
-</table>
-
-**核心特性**（与 Premium 版功能完全一致）：
-
-| 功能模块 | 说明 |
-| --- | --- |
-| 基础功能 | 多模型 AI 对话、多模态支持（文本、图像、文件） |
-| 服务商管理 | 内置国内外主流大模型服务，开箱即用 |
-| 默认模型设置 | 配置助手模型、话题命名和翻译模型，平衡体验与成本 |
-| 用户与分组管理 | 员工账号管理与分组权限控制，精细分配 AI 资源访问权限 |
-| 助手管理 | 创建预置角色、知识库和工具的 AI 助手，按用户组分发 |
-| 助手库 | 集中管理可复用的助手模板，支持从内置模板市场一键导入 |
-| 智能体管理 | 支持多模型协作、技能绑定和 MCP 工具集成的 AI 智能体 |
-| 智能体技能 | 管理可复用的技能模块，支持手动添加或从社区市场下载 |
-| 知识库管理 | 企业级 RAG 引擎，将文档向量化实现精准问答 |
-| MCP 服务器 | 通过 MCP 协议连接外部工具和数据源 |
-| 小程序管理 | 将外部 AI 工具和 Web 服务集成到客户端侧边栏 |
-| 用量统计 | 多维度可视化看板，实时监控 Token 消耗与成本分布 |
-| 系统设置 | 网络代理、搜索引擎集成、OCR 文档预处理和缓存管理 |
-| API 网关 | 支持通过 API Key 在外部应用、IDE 插件中调用企业模型 |
-
-**适用场景**：希望零部署、开箱即用的中小企业，按需付费、灵活扩展
-
----
-
-### Premium 版
-
-<table>
-<tbody>
-<tr><td><strong>适用对象</strong></td><td>大中型企业、对安全和管理有高要求的组织</td></tr>
-<tr><td><strong>定价</strong></td><td><DynamicLink href="/[lang]/docs/contact">联系我们以获取定价</DynamicLink></td></tr>
-<tr><td><strong>许可协议</strong></td><td>商业许可（买断制）</td></tr>
-<tr><td><strong>部署方式</strong></td><td>私有化部署（Docker / Helm）</td></tr>
-<tr><td><strong>技术支持</strong></td><td>专属技术支持（需购买年度服务费）</td></tr>
-<tr><td><strong>服务商</strong></td><td>完全自由配置，可添加自定义服务商和私有化模型</td></tr>
-</tbody>
-</table>
-
-**核心特性**（与 Express 版功能完全一致，以下为额外能力）：
-
-- 完全自由配置任意服务商和私有化模型（Express 版仅支持内置服务商）
-- 支持对接企业内网或自建大模型服务
-- 数据完全存储在您自己的服务器上，满足合规要求
-
-**适用场景**：需要数据完全私有、对接私有化模型或自建大模型服务的企业
-
-## 购买方式
-
-### Express 版
-
-在线注册即可开始使用，支持支付宝和对公转账。
-
-<Callout type="info">
-  <DynamicLink href="/[lang]/docs/quickstart#express">Express 版快速开始 →</DynamicLink>
-</Callout>
-
-<Callout type="info">
-  有折扣码？参见 <DynamicLink href="/[lang]/docs/admin/order-management/using-discount-code">使用折扣码</DynamicLink>。
-</Callout>
-
-### Premium 版
-
-请联系我们获取定制报价：
-
-- **商务邮箱**：bd@cherry-ai.com
-- **电话**：+86 13681876646
-- **企业微信**：
-
-<img src="/assets/images/wechat-enterprise-qr.webp" alt="企业微信二维码" style={{maxWidth: '200px'}} />
-
-**技术支持邮箱**：support@cherry-ai.com
-
-### 🎯 免费体验
-
-我们提供完整的体验环境，让您在购买前充分了解产品功能：
-
-- **管理后台体验**：[https://admin.demo.cherry-ai.com/](https://admin.demo.cherry-ai.com/)（用户名：admin，密码：password）
-- **客户端下载**：[https://enterprise.cherry-ai.com/](https://enterprise.cherry-ai.com/)
-
----
-
-**注意**：价格仅供参考，具体报价请联系销售团队获取最新优惠信息。企业客户可根据具体需求定制专属解决方案。
+</PremiumOnly>

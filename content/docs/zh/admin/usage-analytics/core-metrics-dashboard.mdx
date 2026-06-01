@@ -8,12 +8,12 @@ import { Callout } from 'fumadocs-ui/components/callout'
 
 ## 看板概览
 
-核心指标看板以卡片形式展示关键 KPI。Express 版提供 **Token** 和 **金额** 两种视图，Premium 版提供统一的 Token 用量视图。
+核心指标看板以卡片形式展示关键 KPI，提供 **Token** 和 **金额** 两种视图。
 
-<Tabs items={['Express 版 — Token', 'Express 版 — 金额', 'Premium 版']}>
-<Tab value="Express 版 — Token">
+<Tabs items={['Token', '金额']}>
+<Tab value="Token">
 
-<img src="/assets/images/zh/admin/usage-analytics-core-metrics-express-token_zh.webp" alt="Express 版 Token 看板" />
+<img src="/assets/images/zh/admin/usage-analytics-core-metrics-express-token_zh.webp" alt="Token 看板" />
 
 ### 指标详解
 
@@ -29,9 +29,9 @@ import { Callout } from 'fumadocs-ui/components/callout'
 | **缓存写入 Token** | 写入缓存供后续复用的 Token 数量。 |
 
 </Tab>
-<Tab value="Express 版 — 金额">
+<Tab value="金额">
 
-<img src="/assets/images/zh/admin/usage-analytics-core-metrics-express-cost_zh.webp" alt="Express 版金额看板" />
+<img src="/assets/images/zh/admin/usage-analytics-core-metrics-express-cost_zh.webp" alt="金额看板" />
 
 ### 指标详解
 
@@ -47,11 +47,15 @@ import { Callout } from 'fumadocs-ui/components/callout'
 | **活跃模型** | 被调用过的 AI 模型种类数量。 |
 
 </Tab>
-<Tab value="Premium 版">
+</Tabs>
+
+<PremiumOnly>
+
+### Premium 版核心指标看板
 
 <img src="/assets/images/zh/admin/usage-analytics-core-metrics_zh.webp" alt="Premium 版核心指标看板" />
 
-### 指标详解
+#### 指标详解
 
 | 指标 | 说明 |
 | --- | --- |
@@ -68,7 +72,6 @@ import { Callout } from 'fumadocs-ui/components/callout'
 **运维建议：** 如果 **中断请求** 的比例异常升高，建议立即检查 **系统设置 > Model Provider** 中的连接状态，或确认外部网络环境是否稳定。
 </Callout>
 
-</Tab>
-</Tabs>
+</PremiumOnly>
 
 ***

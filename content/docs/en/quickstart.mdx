@@ -1,15 +1,9 @@
 ---
 title: Quickstart
-description: Get started with Cherry Studio Enterprise — choose Express (sign up and go) or Premium (self-hosted)
+description: Get started with Cherry Studio Enterprise — sign up and use it in the cloud
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout'
-import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
-
-Choose your edition and follow the steps to get started with Cherry Studio Enterprise.
-
-<Tabs items={['Express (Sign Up & Go)', 'Premium (Self-Hosted)']} updateAnchor>
-<Tab value="Express (Sign Up & Go)" id="express">
 
 **Estimated time: 5 minutes** — no deployment, sign up and go
 
@@ -93,7 +87,7 @@ If you haven't created any groups yet, go to [Create & Edit Groups](/docs/admin/
 Download and install the Cherry Studio Enterprise client.
 
 <div style={{margin:'12px 0'}}>
-  <a href="https://enterprise.cherry-ai.com/" target="_blank" style={{display:'inline-flex',alignItems:'center',gap:'6px',height:'36px',padding:'0 14px',backgroundColor:'#1a6eff',color:'white',borderRadius:'6px',fontSize:'14px',fontWeight:500,textDecoration:'none'}}>
+  <a href="https://enterprise.cherryai.com.cn/download" target="_blank" style={{display:'inline-flex',alignItems:'center',gap:'6px',height:'36px',padding:'0 14px',backgroundColor:'#1a6eff',color:'white',borderRadius:'6px',fontSize:'14px',fontWeight:500,textDecoration:'none'}}>
     <svg style={{flexShrink:0}} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
     <span style={{lineHeight:1}}>Download Client</span>
   </a>
@@ -103,7 +97,7 @@ Download and install the Cherry Studio Enterprise client.
 
 Sign in to the client with your registered account or the account created via an invite link.
 
-Express comes with AI model services pre-configured (OpenAI, Claude, Gemini, etc.) — **no need to manually add providers or API keys**. Start chatting right after signing in.
+Cherry Studio Enterprise comes with AI model services pre-configured (OpenAI, Claude, Gemini, etc.) — **no need to manually add providers or API keys**. Start chatting right after signing in.
 
 <img src="/assets/images/en/express/client-chat.webp" alt="Client chat interface" />
 
@@ -111,8 +105,9 @@ Express comes with AI model services pre-configured (OpenAI, Claude, Gemini, etc
   [View the full client guide →](/docs/client)
 </Callout>
 
-</Tab>
-<Tab value="Premium (Self-Hosted)" id="premium">
+<PremiumOnly>
+
+## Premium (Self-Hosted)
 
 **Estimated time: 20 minutes** — from deployment to your first message
 
@@ -134,23 +129,11 @@ We provide a **14-day free trial**. After deployment, you can experience all fea
 Premium edition is custom-priced. [Contact us](/docs/contact) for a detailed proposal.
 </Callout>
 
-<Callout type="info">
-  [Learn how to activate your license →](/docs/admin/authorization/activate-license)
-</Callout>
-
 <h3>Step 3: Add a Provider</h3>
 
 Log in to the admin console and go to "Provider Management" to add AI providers (such as OpenAI or Anthropic) and configure API keys.
 
-<Callout type="info">
-  If you need the first-login admin account details, check the [installation and deployment guide](/docs/setup) first. For cloud app deployment, use the account information provided on the app settings page.
-</Callout>
-
 <img src="/assets/images/en/admin/provider-management-standard-1_en.webp" alt="Add provider" />
-
-<Callout type="info">
-  [View the full provider configuration guide →](/docs/admin/service-provider)
-</Callout>
 
 <h3>Step 4: Set the Default Model</h3>
 
@@ -158,43 +141,15 @@ Go to "Default Models" to assign the default assistant model, topic naming model
 
 <img src="/assets/images/en/admin/default-model-settings-overview_en.webp" alt="Set default model" />
 
-<Callout type="info">
-  [View the full model configuration guide →](/docs/admin/model-settings)
-</Callout>
-
 <h3>Step 5: Add Users</h3>
 
 Go to "User Management" and create accounts for team members.
 
 <img src="/assets/images/en/admin/user-management-add-user-modal_en.webp" alt="Add users" />
 
-<Callout type="info">
-  [View the full user management guide →](/docs/admin/user-management)
-</Callout>
+<h3>Step 6: Download the Client & Sign In</h3>
 
-<h3>Step 6: Download the Client</h3>
-
-Download and install the Cherry Studio Enterprise client.
-
-<div style={{margin:'12px 0'}}>
-  <a href="https://enterprise.cherry-ai.com/" target="_blank" style={{display:'inline-flex',alignItems:'center',gap:'6px',height:'36px',padding:'0 14px',backgroundColor:'#1a6eff',color:'white',borderRadius:'6px',fontSize:'14px',fontWeight:500,textDecoration:'none'}}>
-    <svg style={{flexShrink:0}} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-    <span style={{lineHeight:1}}>Download Client</span>
-  </a>
-</div>
-
-<h3>Step 7: Sign In and Start Using</h3>
-
-Sign in to the client with the account created by the admin to start using all features.
-
-<img src="/assets/images/zh/client-chat-demo.webp" alt="Client chat" />
-
-<Callout type="info">
-  [View the full client guide →](/docs/client)
-</Callout>
-
-</Tab>
-</Tabs>
+Download the enterprise client and sign in with an account created by the admin to start using all features.
 
 ## Edition Comparison
 
@@ -204,3 +159,5 @@ Sign in to the client with the account created by the admin to start using all f
 | Provider setup | Built-in, no configuration needed | Manually add providers and API Keys |
 | User management | Invite link registration | Admin manually creates accounts |
 | Billing | Subscription-based | License-based |
+
+</PremiumOnly>

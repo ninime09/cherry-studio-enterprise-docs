@@ -10,6 +10,9 @@ import { Callout } from 'fumadocs-ui/components/callout'
 **入口パス：** 管理コンソール → About → アプリ情報
 </Callout>
 
+<img src="/assets/images/zh/admin/about-us-application-info-express_zh.webp" alt="アプリ情報" />
+
+<PremiumOnly>
 <Tabs items={['Express 版', 'Premium 版']}>
 <Tab value="Express 版">
 
@@ -22,12 +25,17 @@ import { Callout } from 'fumadocs-ui/components/callout'
 
 </Tab>
 </Tabs>
+</PremiumOnly>
 
 ## バージョンと状態監視
 
 上部に現在の「健康状態」が表示されます：
 
-<table><thead><tr><th width="104.90625">項目</th><th width="265.25390625">説明</th><th>用途</th></tr></thead><tbody><tr><td><strong>現在のバージョン</strong></td><td>現在のデプロイインスタンスのバージョン番号（例：<code>0.4.10</code>）。</td><td>互換性や新機能対応の確認。</td></tr><tr><td><strong>最新バージョン</strong></td><td>公式にリリースされた最新バージョン（例：<code>0.4.10</code>）。</td><td>現在のバージョンと比較し、アップグレードの要否を判断。</td></tr><tr><td><strong>ビルドバージョン</strong></td><td>分単位の内部ビルドタイムスタンプ（例：<code>202603311021</code>）。</td><td><strong>障害調査の鍵</strong>。バグ報告時に必ず提示。</td></tr><tr><td><strong>サービス状態</strong></td><td>バックエンド接続のリアルタイム確認。</td><td>● 正常稼働なら健康。赤表示なら Docker ログを確認。</td></tr><tr><td><strong>システム更新</strong> <em>(Premium のみ)</em></td><td>ソフトウェア更新を設定後、最新バージョンの検出とアップグレードが可能。</td><td>まず「ソフトウェア更新を設定」をクリックして設定完了後、オンラインで更新を確認・インストール。</td></tr></tbody></table>
+<table><thead><tr><th width="104.90625">項目</th><th width="265.25390625">説明</th><th>用途</th></tr></thead><tbody><tr><td><strong>現在のバージョン</strong></td><td>現在のデプロイインスタンスのバージョン番号（例：<code>0.4.10</code>）。</td><td>互換性や新機能対応の確認。</td></tr><tr><td><strong>最新バージョン</strong></td><td>公式にリリースされた最新バージョン（例：<code>0.4.10</code>）。</td><td>現在のバージョンと比較し、アップグレードの要否を判断。</td></tr><tr><td><strong>ビルドバージョン</strong></td><td>分単位の内部ビルドタイムスタンプ（例：<code>202603311021</code>）。</td><td><strong>障害調査の鍵</strong>。バグ報告時に必ず提示。</td></tr><tr><td><strong>サービス状態</strong></td><td>バックエンド接続のリアルタイム確認。</td><td>● 正常稼働なら健康。赤表示なら Docker ログを確認。</td></tr></tbody></table>
+
+<PremiumOnly>
+**システム更新**（Premium のみ）：ソフトウェア更新を設定後、最新バージョンの検出とアップグレードが可能。まず「ソフトウェア更新を設定」をクリックして設定完了後、オンラインで更新を確認・インストールできます。
+</PremiumOnly>
 
 <Callout type="warn">
 **注意:** **サービス状態** が異常でもフロントは表示される場合がありますが、モデル呼び出しやファイル解析などのバックエンド機能は失敗します。
@@ -39,6 +47,8 @@ import { Callout } from 'fumadocs-ui/components/callout'
 
 * **クライアントダウンロード:** Windows / macOS クライアント。
 * **ドキュメント:** 公式マニュアル（本ドキュメント）。
+
+<PremiumOnly>
 * **Docker イメージ** *(Premium のみ)*: Docker Hub へのリンク。
 
 <Callout type="info">
@@ -47,3 +57,4 @@ import { Callout } from 'fumadocs-ui/components/callout'
 docker-registry.cherry-ai.com/public/cherry-studio-enterprise-api:v0.4.10
 ```
 </Callout>
+</PremiumOnly>

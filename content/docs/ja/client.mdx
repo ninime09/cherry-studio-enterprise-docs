@@ -3,33 +3,28 @@ title: クライアント
 description: "企業の従業員向けに設計された AI ワークアシスタント。スマート対話、知識検索、エージェント、MCP ツール、小プログラムなどワンストップのワークスペースを提供します。"
 ---
 
-import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
 import { Callout } from 'fumadocs-ui/components/callout'
 
 ## ダウンロードとログイン
 
-- **クライアントのダウンロード**: https://enterprise.cherry-ai.com/
+- **クライアントのダウンロード**: https://enterprise.cherryai.com.cn/download
 
-クライアントは 2 つのログイン方式に対応しており、デプロイ版によって異なります。ログインページの右下にある切替ボタンで切り替えられます。
+<img src="/assets/images/ja/client-login-express_ja.webp" alt="クライアントログイン — クラウドサービス" />
 
-<Tabs items={['Express 版（クラウドサービス）', 'Premium 版（プライベートデプロイ）']}>
-<Tab value="Express 版（クラウドサービス）">
-
-<img src="/assets/images/ja/client-login-express_ja.webp" alt="Express 版ログイン — クラウドサービス" />
-
-Express 版はクラウドサービスのログインを使用し、以下の 2 つの方法があります：
+クライアントはクラウドサービスのアカウントでログインします。以下の 2 つの方法があります：
 
 - **SMS コードでログイン**：電話番号を入力し、確認コードを受け取ってログインします。
 - **パスワードでログイン**：登録済みの電話番号とパスワードでログインします。
 
 アカウントをお持ちでない場合は、左下の「新規登録」をクリックして登録できます。
 
-</Tab>
-<Tab value="Premium 版（プライベートデプロイ）">
+<PremiumOnly>
+
+### プライベート導入版のログイン
 
 <img src="/assets/images/ja/client-login-premium_ja.webp" alt="Premium 版ログイン — プライベートデプロイ" />
 
-Premium 版はプライベートデプロイのログインを使用します。以下の情報を入力してください：
+プライベート導入版では、以下の情報を入力してログインします：
 
 - **サーバー URL**：企業が自社でデプロイしたサーバーの URL。
 - **ユーザー名**：管理者から割り当てられたユーザー名。
@@ -41,12 +36,9 @@ SSO が設定されている場合は、左下の「SSO ログイン」をクリ
 **体験アカウント：** サーバー URL `https://api.demo.cherry-ai.com`、ユーザー名 `user`、パスワード `password`
 </Callout>
 
-</Tab>
-</Tabs>
-
-<Callout type="info">
 ログインページの右下にある「プライベートデプロイ」または「SaaS Cloud」をクリックして、ログイン方式を切り替えられます。
-</Callout>
+
+</PremiumOnly>
 
 ## 主要機能
 
